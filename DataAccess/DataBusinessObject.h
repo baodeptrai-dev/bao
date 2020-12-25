@@ -8,7 +8,7 @@ public:
     virtual void Add() = 0;
     virtual void Edit(int ) = 0;
     virtual void Delete(int ) = 0;
-    virtual void Read() = 0;
+    virtual void Read(string ) = 0;
 };
 
 #endif

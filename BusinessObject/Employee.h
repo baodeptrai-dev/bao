@@ -2,7 +2,9 @@
 #define _EMPLOYEE_H_
 #include <string>
 #include "BusinessObject.h"
+#include "../libs/json.hpp"
 using namespace std;
+using json = nlohmann::json;
 class Employee : public BusinessObject {
 private: 
     string Fname;     // First name of employee
@@ -26,6 +28,7 @@ public:
     int& GetId();
     int& GetIdNew();
     string ToString();
+    json ToJson();
     friend istream& operator >> (istream& is, Employee& emp);
 };
 

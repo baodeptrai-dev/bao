@@ -11,7 +11,7 @@ EmployeeData::EmployeeData(){
     _employeeArr.resize(0);
 }
 
-EmployeeData::EmployeeData(string filename){
+void EmployeeData::Read(string filename){
     _maxId = 0;
     _employeeArr.resize(0);
     ifstream inFile(filename);
@@ -19,6 +19,7 @@ EmployeeData::EmployeeData(string filename){
     char buff[maxSize]; 
     while (inFile.getline(buff,maxSize)) {
         json j = json::parse(buff);
+        string sex = j["Sex"];
         Employee e(
             j["Fname"],
             j["Minit"],
@@ -26,11 +27,12 @@ EmployeeData::EmployeeData(string filename){
             j["Ssn"],
             j["Bdate"],
             j["Address"],
-            j["Sex"],
+            sex[0],
             j["Salary"],
             j["Superssn"],
             j["Dno"]
         );
+        e.IncreaseId();
         _employeeArr.push_back(e);
     }
     inFile.close();
@@ -78,6 +80,12 @@ int EmployeeData::GetSize() {
     return _employeeArr.size();
 }
 
-void EmployeeData::Read() {
-    EmployeeData employeeData("EmployeeData.data");
+int EmployeeData::ExportToFile(string filename){
+    ofstream outFile(filename, ios::out);
+    if (!outFile) return 0;
+    for (Employee e :_employeeArr){
+        outFile << e.ToJson() << endl;
+    }
+    outFile.close();
+    return 1;
 }

@@ -3,13 +3,12 @@
 #include <vector>
 #include "../BusinessObject/Employee.h"
 #include "DataBusinessObject.h"
-class EmployeeData{
+class EmployeeData : public DataBusinessObject {
 private:
     vector<Employee> _employeeArr;
-    int _maxId;
+    int _maxId = 5;
 public:
     EmployeeData();
-    EmployeeData(string );
     int GetMaxId();
     int PushBack(Employee);
     Employee& Get(int );
@@ -17,6 +16,7 @@ public:
     void Add();
     void Edit(int );
     void Delete(int );
-    void Read();
+    void Read(string );
+    int ExportToFile(string );
 };
 #endif

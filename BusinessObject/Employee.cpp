@@ -41,6 +41,21 @@ string Employee::ToString() {
     return s;
 }
 
+json Employee::ToJson(){
+    json j;
+    j["Minit"] = Minit;
+    j["Lname"] = Lname;
+    j["Ssn"] = Ssn;
+    j["Bdate"] = Bdate;
+    j["Address"] = Address;
+    j["Fname"] = Fname;
+    j["Sex"] = Sex;
+    j["Salary"] = Salary;
+    j["Superssn"] = Superssn;
+    j["Dno"] = Dno;
+    return j;
+}
+
 void Employee::IncreaseId() {
     Id = ++Idnew;
 }
