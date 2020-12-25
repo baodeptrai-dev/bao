@@ -4,7 +4,7 @@ Employee::Employee() {
 }
 
 // Constructor with input parameters
-Employee::Employee(string Fname, string Minit, string Lname, int Ssn, string Bdate, string Address, char Sex, int Salary, int Superssn, int Dno) {
+Employee::Employee(string Fname, string Minit, string Lname, int Ssn, string Bdate, string Address, string Sex, int Salary, int Superssn, int Dno) {
     this->Fname = Fname;
     this->Minit = Minit;
     this->Lname = Lname;
@@ -33,8 +33,7 @@ string Employee::ToString() {
     s += "SSN: " + to_string(Ssn) + ", ";
     s += "BDate: " + Bdate + ", ";
     s += "Adrress: " + Address + ", ";
-    string str = string(1, Sex);
-    s += "Sex: " + str + ", ";
+    s += "Sex: " + Sex + ", ";
     s += "Salary: " + to_string(Salary) + ", ";
     s += "SuperSSN: " + to_string(Superssn) + ", ";
     s += "DNO: " + to_string(Dno) + "}";

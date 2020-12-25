@@ -19,7 +19,7 @@ void EmployeeData::Read(string filename){
     char buff[maxSize]; 
     while (inFile.getline(buff,maxSize)) {
         json j = json::parse(buff);
-        string sex = j["Sex"];
+        //string sex = j["Sex"];
         Employee e(
             j["Fname"],
             j["Minit"],
@@ -27,7 +27,7 @@ void EmployeeData::Read(string filename){
             j["Ssn"],
             j["Bdate"],
             j["Address"],
-            sex[0],
+            j["Sex"],
             j["Salary"],
             j["Superssn"],
             j["Dno"]

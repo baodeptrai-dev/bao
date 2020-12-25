@@ -13,7 +13,7 @@ private:
     int Ssn;       // Social security number of employee
     string Bdate;     // Birth day of employee
     string Address;   // Address of employee
-    char Sex;         // Sex of employee
+    string Sex;         // Sex of employee
     int Salary;       // Salary of employee
     int Superssn;  // Superssn of employee
     int Dno;          // Dno of employee
@@ -23,7 +23,7 @@ public:
     // Default constructor
     Employee(); 
     // Constructor with input parameters
-    Employee(string Fname, string Minit, string Lname, int Ssn, string Bdate, string Address, char Sex, int Salary, int Superssn, int Dno);   
+    Employee(string Fname, string Minit, string Lname, int Ssn, string Bdate, string Address, string Sex, int Salary, int Superssn, int Dno);   
     void IncreaseId();
     int& GetId();
     int& GetIdNew();
